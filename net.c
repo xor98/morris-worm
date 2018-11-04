@@ -8,6 +8,8 @@
 #include <netinet/in.h>
 #include <net/if.h>
 
+static rt_init_plus_544();
+
 /* This is the second of five source files linked together to form the '.o'
  * file distributed with the worm.
  */

@@ -11,7 +11,7 @@ CFLAGS =
 TAGS_FLAGS = -xDt
 
 test: $(OFILES)
-	$(CC) -o test $(OFILES)
+	$(CC) -o test $(OFILES) $(CFLAGS)
 $(OFILES): worm.h
 
 clean:

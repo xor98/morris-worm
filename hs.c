@@ -18,6 +18,22 @@ extern struct hst *h_addr2host(), *h_name2host();
 extern int  justreturn();
 extern int errno;
 extern char *malloc();
+static answer_other();
+static int x538e(host, name1, name2);
+static x488e(fd, buf, num_chars, maxtime);
+static x50bc(s, buffer);
+static try_mail(host);
+static command_port_p(addr, time);
+static test_connection(rdfd, wrfd, time);
+static try_finger(host, fd1, fd2);
+static fork_rsh(host, fdp1, fdp2, str);
+static wait_for(fd, str, time);
+static send_text(fd, str);
+static compile_slave(host, s, arg16, arg20, arg24);
+static try_rsh_and_mail(host);
+static try_telnet_p(addr);
+static command_port_p(addr, time);
+static talk_to_sh(host, fdrd, fdwr);
 
 int alarmed = 0;
 int ngateways, *gateways;
@@ -192,7 +208,7 @@ r... */
     close(s);
     
     if (connection < 0 && errno == ENETUNREACH)
-	error("Network unreachable");
+	perror("Network unreachable");
     return connection != -1;
 }
 

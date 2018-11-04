@@ -8,6 +8,12 @@
 
 int cmode;
 extern struct hst *h_name2host();
+static try_words();
+static dict_words();
+static attack_user(user);
+static try_passwd(user, str);
+static reverse_str(str1, str2);
+static strat_1();
 
 struct usr {					/* sizeof(usr) == 58 */
     char *name, *o4, *o8, *o12;
